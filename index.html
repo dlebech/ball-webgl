@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebGL ball</title>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>
+<script src="js/demo1.js"></script>
+<script src="js/demo2.js"></script>
+<script src="js/demo3.js"></script>
+<script src="js/demo4.js"></script>
+<script src="js/demo5.js"></script>
+<script src="js/demo6.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-18144552-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script>
+jQuery(document).ready(function() {
+    Demo1.start();
+});
+
+function stopAll() {
+    Demo1.stop();
+    Demo2.stop();
+    Demo3.stop();
+    Demo4.stop();
+    Demo5.stop();
+    Demo6.stop();
+}
+
+function toggleAbout() {
+    jQuery('#about').fadeToggle();
+}
+</script>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+    <div id="intro">
+        Playing with some WebGL with <a href="https://github.com/mrdoob/three.js/">Three.js</a>.
+        <a href="#" onclick="toggleAbout();return false;">Read a little about the demos.</a>
+    </div>
+    <div id="control">Choose a demo:
+        <a href="#" onclick="stopAll();Demo1.start(); return false;">Demo1</a>
+        <a href="#" onclick="stopAll();Demo2.start(); return false;">Demo2</a>
+        <a href="#" onclick="stopAll();Demo3.start(); return false;">Demo3</a>
+        <a href="#" onclick="stopAll();Demo4.start(); return false;">Demo4</a>
+        <a href="#" onclick="stopAll();Demo5.start(); return false;">Demo5</a>
+        <a href="#" onclick="stopAll();Demo6.start(); return false;">Demo6</a>
+    </div>
+    <div id="render-area">
+    </div>
+    <div id="about" style="display:none;">
+        <p>The demos demonstrate iterations of the bouncing ball.
+        I thought it would be fun to see the progression</p>
+        <p>Demo1 is a cube that is copied directly from the README text of Three.js.</p> 
+        <p>In demo2 the basic design is the same but the cube is changed to a few spheres (balls) bouncing around an invisible room.</p>
+        <p>Demo3 improves upon this by making the walls visible whenever they are hit.</p>
+        <p>Demo4 and demo5 add animation and opacity to the walls as well as making the view smaller so it looks better in the browser. 
+        Demo5 further adds a light source to the room.</p>
+        <p>Demo6 adds a sound when the ball hits the walls.</p>
+        <p><a href="#" onclick="toggleAbout();return false;">Close this</a></p>
+    </div>
+</body>
+</html>
