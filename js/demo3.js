@@ -179,7 +179,7 @@
             cleanupPlanes( elapsed );
     
             // note: three.js includes requestAnimationFrame shim
-            requestAnimationFrame( animate );
+            window.animationId = requestAnimationFrame( animate );
             render();
         }
     }
@@ -191,6 +191,8 @@
     var Demo3 = function() {};
 
     Demo3.prototype.start = function() {
+        if (window.animationId !== null)
+            cancelAnimationFrame(window.animationId);
         init();
         animating = true;
         animate();

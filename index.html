@@ -11,6 +11,7 @@
 <script src="js/demo4.js"></script>
 <script src="js/demo5.js"></script>
 <script src="js/demo6.js"></script>
+<script src="js/demo7.js"></script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,6 +22,8 @@ ga('create', 'UA-18144552-2', 'auto');
 ga('send', 'pageview');
 </script>
 <script>
+window.animationId = null;
+
 jQuery(document).ready(function() {
     Demo1.start();
 });
@@ -32,6 +35,7 @@ function stopAll() {
     Demo4.stop();
     Demo5.stop();
     Demo6.stop();
+    Demo7.stop();
 }
 
 function toggleAbout() {
@@ -52,6 +56,7 @@ function toggleAbout() {
         <a href="#" onclick="stopAll();Demo4.start(); return false;">Demo4</a>
         <a href="#" onclick="stopAll();Demo5.start(); return false;">Demo5</a>
         <a href="#" onclick="stopAll();Demo6.start(); return false;">Demo6</a>
+        <a href="#" onclick="stopAll();Demo7.start(); return false;">Demo7</a>
     </div>
     <div id="render-area">
     </div>
@@ -64,6 +69,7 @@ function toggleAbout() {
         <p>Demo4 and demo5 add animation and opacity to the walls as well as making the view smaller so it looks better in the browser. 
         Demo5 further adds a light source to the room.</p>
         <p>Demo6 adds a sound when the ball hits the walls.</p>
+        <p>Demo7 adds movement with the arrow keys or wasd.</p>
         <p><a href="#" onclick="toggleAbout();return false;">Close this</a></p>
     </div>
 </body>

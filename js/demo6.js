@@ -4,7 +4,7 @@
 // There is a single light source in the room.
 // The room is centered around (x,y,z) = (0,0,0)
 (function() {
-    var camera, scene, renderer, spheres = [], planes = {};
+    var camera, scene, renderer, spheres = [], planes = {},
         windowWidth = window.innerWidth-100,
         windowHeight = window.innerHeight-100,
         windowDepth = 1000,
@@ -214,7 +214,7 @@
             }
     
             // note: three.js includes requestAnimationFrame shim
-            requestAnimationFrame( animate );
+            window.animationId = requestAnimationFrame( animate );
             render();
         } 
     }
@@ -226,6 +226,8 @@
     var Demo6 = function() {};
 
     Demo6.prototype.start = function() {
+        if (window.animationId !== null)
+            cancelAnimationFrame(window.animationId);
         init();
         animating = true;
         animate();

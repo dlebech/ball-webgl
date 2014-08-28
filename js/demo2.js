@@ -61,7 +61,7 @@
         renderarea.appendChild( renderer.domElement );
     
     }
-    
+
     function animate() {
         if (animating) {
             for (var i = 0; i < spheres.length; i++) {
@@ -70,7 +70,7 @@
             }
     
             // note: three.js includes requestAnimationFrame shim
-            requestAnimationFrame( animate );
+            window.animationId = requestAnimationFrame( animate );
             render();
         }
     }
@@ -82,6 +82,8 @@
     var Demo2 = function() {};
 
     Demo2.prototype.start = function() {
+        if (window.animationId !== null)
+            cancelAnimationFrame(window.animationId);
         init();
         animating = true;
         animate();
