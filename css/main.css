@@ -1,11 +1,21 @@
-body { font-family: Georgia, Times New Roman, serif; }
+body {
+  font-family: Georgia, Times New Roman, serif;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+div {
+  margin: 5px 0;
+}
+a {
+  margin: 0 3px;
+}
 #about { 
-    z-index: 1000; 
-    position: absolute; 
-    left: 20px; 
-    top: 60px; 
-    width: 250px;
-    background: #eee;
-    border: 1px solid #333;
-    padding: 6px;
+  z-index: 1000;
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  width: 250px;
+  background: #eee;
+  border: 1px solid #333;
+  padding: 14px;
 }

@@ -35,8 +35,6 @@
         renderarea.appendChild( renderer.domElement );
     }
     
-    var animationId = null;
-
     function animate() {
         if (animating) {
             // note: three.js includes requestAnimationFrame shim
